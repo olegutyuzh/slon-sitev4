@@ -34,7 +34,8 @@ let currentLang = urlLang
     ? normalizeLang(savedLang)
     : getDeviceLang();
 
-let translationsCache = null;
+// Кеш перекладів по набору джерел (ключ — список файлів через "|")
+let translationsCache = {};
 
 if (urlLang) {
   localStorage.setItem("lang", currentLang);
@@ -57,7 +58,45 @@ function updateActiveButtons() {
     });
 }
 
+// Які файли перекладів вантажити.
+// /i18n.json — завжди (спільні переклади сайту).
+// Додаткові файли вказуються на сторінці через атрибут data-i18n-src
+// на <html> або <body>. Можна кілька через кому:
+//   <html data-i18n-src="/stories_i18n.json">
+//   <body data-i18n-src="/stories_i18n.json, /faq_i18n.json">
+function getTranslationSrcs() {
+    const extra = document.documentElement.getAttribute("data-i18n-src")
+        || document.body.getAttribute("data-i18n-src");
+
+    const srcs = ["/i18n.json"];
+    if (extra) {
+        extra.split(",")
+            .map(s => s.trim())
+            .filter(Boolean)
+            .forEach(s => srcs.push(s));
+    }
+    return srcs;
+}
+
+// Зливаємо словники по мовах.
+// parts — масив об'єктів виду { uk: {...}, en: {...} }.
+// Пізніші файли перекривають ранніші при збігу ключів
+// (тобто додаткові файли > /i18n.json).
+function mergeTranslations(parts) {
+    const merged = {};
+    for (const part of parts) {
+        if (!part) continue;
+        for (const lang of Object.keys(part)) {
+            merged[lang] = Object.assign(merged[lang] || {}, part[lang]);
+        }
+    }
+    return merged;
+}
+
 function applyTranslations() {
+    const srcs = getTranslationSrcs();
+    const cacheKey = srcs.join("|");
+
     const render = (data) => {
         const dict = data[currentLang] || data[DEFAULT_LANG] || {};
 
@@ -71,7 +110,7 @@ function applyTranslations() {
 
         // HTML-вміст: <p data-i18n-html="key">...</p>
         // Використовується для перекладів, що містять HTML-теги (<em>, <strong>, <br> тощо).
-        // Сюди можна вставляти тільки переклади з власного i18n.json — НЕ дані від користувачів.
+        // Сюди можна вставляти тільки переклади з власних i18n-файлів — НЕ дані від користувачів.
         document.querySelectorAll("[data-i18n-html]").forEach(el => {
             const key = el.getAttribute("data-i18n-html");
             if (dict[key] !== undefined) {
@@ -113,7 +152,7 @@ function applyTranslations() {
 
         // Двомовний контент (для блогу): <span data-lang-content="uk">...</span>
         // Показуємо тільки той блок, що відповідає поточній мові.
-        // Використовується там, де контент зберігається не в i18n.json,
+        // Використовується там, де контент зберігається не в i18n-файлах,
         // а прямо в HTML двома мовами одразу (наприклад, статті блогу).
         document.querySelectorAll("[data-lang-content]").forEach(el => {
             const elLang = normalizeLang(el.getAttribute("data-lang-content"));
@@ -134,20 +173,25 @@ function applyTranslations() {
         document.documentElement.setAttribute("lang", currentLang);
     };
 
-    if (translationsCache) {
-        render(translationsCache);
+    if (translationsCache[cacheKey]) {
+        render(translationsCache[cacheKey]);
         return;
     }
 
-    fetch("/i18n.json")
-        .then(res => {
-            if (!res.ok) throw new Error("Failed to load i18n.json: " + res.status);
-            return res.json();
-        })
-        .then(data => {
-            translationsCache = data;
-            window.translationsCache = data; // експорт для інших скриптів (напр. memory-new.html)
-            render(data);
+    Promise.all(
+        srcs.map(src =>
+            fetch(src)
+                .then(res => {
+                    if (!res.ok) throw new Error("Failed to load " + src + ": " + res.status);
+                    return res.json();
+                })
+        )
+    )
+        .then(parts => {
+            const merged = mergeTranslations(parts);
+            translationsCache[cacheKey] = merged;
+            window.translationsCache = merged; // експорт для інших скриптів (напр. memory-new.html)
+            render(merged);
         })
         .catch(err => console.error("[i18n]", err));
 }

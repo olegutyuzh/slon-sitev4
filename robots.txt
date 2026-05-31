@@ -1,4 +1,41 @@
+# robots.txt for https://slon.life
+# Memorial site dedicated to Ihor "Slon" Utyuzh (1996–2023)
+
+# Global access
 User-agent: *
 Allow: /
 
+# OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Google AI / Gemini
+User-agent: Google-Extended
+Allow: /
+
+# Common search crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Optional crawl delay for aggressive bots
+# Crawl-delay: 1
+
+# Sitemap
 Sitemap: https://slon.life/sitemap.xml

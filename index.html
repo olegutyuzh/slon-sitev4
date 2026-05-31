@@ -4,19 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <link rel="manifest" href="/webmanifest.json">
+  <meta name="theme-color" content="#1a1a1a">  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="/img/candle.svg" fetchpriority="high">
-  <link rel="preload" as="image" href="/img/hero-portrait.jpg" fetchpriority="high">  
-
-<!--   <link rel="stylesheet" href="/css/min/style.min.css" />
-  <link rel="stylesheet" href="/css/min/candle.min.css" />
-  <link rel="stylesheet" href="/css/min/bottom_menu.min.css" />  
-  <link rel="stylesheet" href="/css/min/menu.min.css" />  
-  <link rel="stylesheet" href="/css/min/sub_menu.min.css" />  -->
+  <link rel="preload" as="image" href="/img/hero-portrait.webp" fetchpriority="high"> 
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
   <link rel="stylesheet" href="/css/min/index.bundle.min.css" />   
+  <link rel="icon" href="/favicon.ico">
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap&subset=cyrillic">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap&subset=cyrillic"
+        media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap&subset=cyrillic">
+  </noscript>  
   <link rel="alternate" hreflang="uk" href="https://slon.life/" />
   <link rel="alternate" hreflang="en" href="https://slon.life/?lang=en" />
   <link rel="alternate" hreflang="x-default" href="https://slon.life/" />
@@ -61,11 +67,11 @@
 
       <a href="index.html" class="header-logo" aria-label="На головну сторінку">
         <div class="header-logo-mark">
-          <img src="img/symbol-slon.jpg" alt="Символ Слон" class="logo-elephant" loading="lazy" />
+          <img src="img/slon-icon-64.png" alt="Символ Слон" class="logo-elephant" loading="lazy" />
         </div>
         <span class="header-logo-text">SLON</span>
         <span class="header-logo-candle" aria-hidden="true">
-          <img src="img/candle.svg" alt="" fetchpriority="high"/>
+          <img src="img/candle.svg" alt="Candle" fetchpriority="high"/>
         </span>
       </a>
        
@@ -108,7 +114,7 @@
 
       <div class="hero-photo-wrap">
         <div class="hero-photo">
-          <img src="/img/hero-portrait.jpg" alt="Ігор Утюж, портрет" />
+          <img src="/img/hero-portrait.webp" alt="Ігор Утюж, портрет" />
         </div>
         <div class="hero-photo-overlay"></div>
         <div class="hero-photo-mark" data-i18n="hero_photo_mark">СЛОН</div>
@@ -213,12 +219,12 @@
       <div class="war-path-photos">
 
         <div class="war-photo-card">
-          <img src="img/war1.jpg" alt="З побратимами 78-го полку" loading="lazy"/>
+          <img src="img/war1.webp" alt="З побратимами 78-го полку" loading="lazy"/>
           <div class="war-photo-caption" data-i18n="war_photo_caption_1" alt="З побратимами 78-го полку">З побратимами 78-го полку</div>
         </div>
 
         <div class="war-photo-card is-portrait">
-          <img src="img/war2.jpg" alt="Робота з дроном на передовій" loading="lazy"/>
+          <img src="img/war2.webp" alt="Робота з дроном на передовій" loading="lazy"/>
           <div class="war-photo-caption" data-i18n="war_photo_caption_2" alt="Робота з дроном на передовій">Робота з дроном на передовій</div>
         </div>
 
@@ -241,9 +247,8 @@
 
         <div class="life-card">
           <div class="life-card-img">
-            <img src="img/life1.jpg" alt="" loading="lazy"/>
+            <img src="img/life1.webp" alt="Жив так, ніби кожен день важливий" loading="lazy"/>
             <div class="life-card-overlay"></div>
-            <!-- <div class="life-card-quote" data-i18n="life_card_quote_1">«Жив так, ніби кожен день важливий»</div> -->
             <div class="photo-mark" data-i18n="life_card_quote_1">«Жив так, ніби кожен день важливий»</div>
           </div>
           <div class="life-card-body">
@@ -254,9 +259,8 @@
 
         <div class="life-card">
           <div class="life-card-img">
-            <img src="img/life2.jpg" alt="" loading="lazy"/>
+            <img src="img/life2.webp" alt="Моя Женя" loading="lazy"/>
             <div class="life-card-overlay"></div>
-            <!-- <div class="life-card-quote" data-i18n="life_card_quote_2">«Моя Женя»</div> -->
             <div class="photo-mark" data-i18n="life_card_quote_2">«Моя Женя»</div>            
           </div>
           <div class="life-card-body">
@@ -267,9 +271,8 @@
 
         <div class="life-card">
           <div class="life-card-img">
-            <img src="img/life3.jpg" alt="" loading="lazy"/>
+            <img src="img/life3.webp" alt="Поїду захищати слонів" loading="lazy"/>
             <div class="life-card-overlay"></div>
-            <!-- <div class="life-card-quote" data-i18n="life_card_quote_3">«Поїду захищати слонів»</div> -->
             <div class="photo-mark" data-i18n="life_card_quote_3">«Поїду захищати слонів»</div>              
           </div>
           <div class="life-card-body">
@@ -318,7 +321,7 @@
         <div class="symbol-card">
           <!-- <div class="symbol-icon">🇺🇦</div> -->
           <div class="symbol-icon">
-            <img src="img/map.svg" alt="Ukraine" aria-hidden="true" class="slon-svg">
+            <img src="img/map.svg" alt="Ukraine" aria-hidden="true" class="slon-svg" loading="lazy">
           </div>       
           <div class="symbol-title" data-i18n="symbol_title_ukraine">Україна</div>
           <div class="symbol-text" data-i18n="symbol_text_ukraine">Те, за що він двічі робив вибір — у 17 і у 25. Те, заради чого жив і за що віддав життя.</div>
@@ -328,37 +331,6 @@
 
     </div>
   </section>
-
-
-
-  <!-- ===== MEMORY OBJECTS ===== -->
-<!--   <section id="objects" class="section memory-objects">
-    <div class="section-inner">
-      <div class="section-header section-header-centered">
-        <div class="section-kicker">Артефакти памʼяті</div>
-        <h2 class="section-title">Памʼять через символи</h2>
-        <p class="section-subtitle">Кілька речей і образів, які перетворюють історію на живий простір — не як музейний стенд, а як тиха присутність.</p>
-      </div>
-
-      <div class="objects-grid">
-        <article class="object-card">
-          <span class="object-number">01</span>
-          <h3>Позивний</h3>
-          <p>«Слон» — знак сили, витримки й доброти, яка не потребувала гучних слів.</p>
-        </article>
-        <article class="object-card">
-          <span class="object-number">02</span>
-          <h3>Світло</h3>
-          <p>Свічка стає не кнопкою, а ритуалом: маленьким жестом, який лишає слід.</p>
-        </article>
-        <article class="object-card">
-          <span class="object-number">03</span>
-          <h3>Шлях</h3>
-          <p>Від Майдану до фронту — лінія вибору, яку сайт проводить через світло, тишу й кадри.</p>
-        </article>
-      </div>
-    </div>
-  </section> -->
 
   <!-- ===== GRATITUDE ===== -->
   <section id="gratitude" class="section gratitude">
@@ -419,23 +391,23 @@
 
     <div class="memory-inner">
 
-      <h2 class="memory-title" data-i18n="memory_title">Вшанувати памʼять</h2>
+      <h2 class="memory-title" data-i18n="memory_title_home">Залишити свій слід у памʼяті</h2>
 
-      <p class="memory-subtitle" data-i18n="memory_subtitle">Якщо ви знали Ігоря або хочете залишити слова — зробіть це тут.</p>
+      <p class="memory-subtitle" data-i18n="memory_subtitle_home">Якщо ця історія вас зачепила — поставте свічку або скажіть кілька слів. Цього достатньо.</p>
 
       <!-- ===== Дві кнопки (як було) ===== -->
       <div class="memory-buttons">
       
         <button id="lightCandleBtn" type="button" class="memory-btn">
           <span class="memory-btn-icon">
-            <img src="img/candle.svg" alt="" aria-hidden="true" class="slon-svg" />
+            <img src="img/candle.svg" alt="Candle" aria-hidden="true" class="slon-svg" />
           </span>
           <span data-i18n="light_candle">Запалити свічку</span>
         </button>
       
         <a href="memory-new.html" class="memory-btn">
           <span class="memory-btn-icon">
-            <img src="img/message.svg" alt="" aria-hidden="true" class="slon-svg" />
+            <img src="img/message.svg" alt="Message" aria-hidden="true" class="slon-svg" />
           </span>
           <span data-i18n="leave_message">Залишити слова</span>
         </a>
@@ -445,7 +417,7 @@
       <!-- ===== Маленький лічильник прямо під кнопками ===== -->
       <div class="candle-counter-line">
         <span class="candle-counter-line-number" id="candlesCount">—</span>
-        <span class="candle-counter-line-text" data-i18n="candle_counter_line">
+        <span class="candle-counter-line-text" data-i18n="candle_counter_line_home">
           свічок памʼяті вже горить
         </span>
       </div>
@@ -456,7 +428,7 @@
         <!-- Стан "щойно запалена" — пропозиція підписати -->
         <div id="candleStateLit" class="candle-card-state">
           <div class="candle-card-icon">
-            <img src="img/candle.svg" alt="" aria-hidden="true" class="slon-svg" />
+            <img src="img/candle.svg" alt="Candle" aria-hidden="true" class="slon-svg" />
           </div>
           <p class="candle-card-text" data-i18n="candle_lit_message">
             Світло памʼяті горить
@@ -487,7 +459,7 @@
         <!-- Стан "вже підписано / повторний візит" -->
         <div id="candleStateDone" class="candle-card-state" hidden>
           <div class="candle-card-icon">
-            <img src="img/candle.svg" alt="" aria-hidden="true" class="slon-svg" />
+            <img src="img/candle.svg" alt="Candle" aria-hidden="true" class="slon-svg" />
           </div>
           <p class="candle-card-text" data-i18n="candle_done_message">
             Ваша свічка горить
@@ -499,44 +471,6 @@
 
       <!-- ===== CANDLE ===== -->
       <div id="candleContainer" class="candle-visual candle-scene">
-
-        <!-- SVG СВІЧКА -->
-<!--         <svg width="80" height="160" viewBox="0 0 80 160">
-
-          <defs>
-            <radialGradient id="glow" cx="50%" cy="30%" r="50%">
-              <stop offset="0%" stop-color="rgba(255,200,120,0.6)" />
-              <stop offset="100%" stop-color="rgba(255,200,120,0)" />
-            </radialGradient>
-
-            <linearGradient id="wax" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#f5f5f5"/>
-              <stop offset="100%" stop-color="#d4d4d4"/>
-            </linearGradient>
-          </defs>
-
-          <circle cx="40" cy="40" r="30" fill="url(#glow)">
-            <animate attributeName="r" values="28;32;28" dur="3s" repeatCount="indefinite"/>
-          </circle>
-
-          <path d="M40 20 C45 30, 50 40, 40 50 C30 40, 35 30, 40 20 Z"
-            fill="#FFD580">
-            <animate attributeName="d"
-              dur="1.6s"
-              repeatCount="indefinite"
-              values="
-              M40 20 C45 30, 50 40, 40 50 C30 40, 35 30, 40 20 Z;
-              M40 22 C46 32, 48 42, 40 50 C32 42, 34 32, 40 22 Z;
-              M40 20 C44 30, 52 40, 40 50 C28 40, 36 30, 40 20 Z;
-              M40 20 C45 30, 50 40, 40 50 C30 40, 35 30, 40 20 Z
-            "/>
-          </path>
-
-          <rect x="39" y="48" width="2" height="6" fill="#444" />
-          <rect x="25" y="54" width="30" height="80" rx="6" fill="url(#wax)" />
-          <ellipse cx="40" cy="140" rx="20" ry="6" fill="rgba(0,0,0,0.3)" />
-
-        </svg> -->
 
         <p class="candle-text" data-i18n="candle_text">Свічку запалено</p>
 
@@ -552,7 +486,7 @@
 
       <!-- Символ слона -->
       <div class="footer-symbol" aria-hidden="true">
-        <img src="img/elephant.svg" alt="" class="footer-symbol-img" />
+        <img src="img/elephant.svg" alt="Elephant" class="footer-symbol-img" />
       </div>
 
       <!-- Цитата -->
@@ -575,24 +509,24 @@
             <path d="M3 7l9 6 9-6"/>
           </svg>
         </a>
-        <span class="footer-social-link is-disabled" aria-label="Telegram (недоступно)" aria-disabled="true">
+        <a class="footer-social-link is-disabled" href="#" aria-label="Telegram" aria-disabled="true" tabindex="-1">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 4L3 11l6 2 2 6 4-4 5 4z"/>
             <path d="M9 13l6-4"/>
           </svg>
-        </span>
-        <span class="footer-social-link is-disabled" aria-label="Instagram (недоступно)" aria-disabled="true">
+        </a>
+        <a class="footer-social-link is-disabled" href="#" aria-label="Instagram" aria-disabled="true" tabindex="-1">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="3" y="3" width="18" height="18" rx="5"/>
             <circle cx="12" cy="12" r="4"/>
             <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/>
           </svg>
-        </span>
-        <span class="footer-social-link is-disabled" aria-label="Facebook (недоступно)" aria-disabled="true">
+        </a>
+        <a class="footer-social-link is-disabled" href="#" aria-label="Facebook" aria-disabled="true" tabindex="-1">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M15 8h-2a1 1 0 0 0-1 1v3h3l-.5 3H12v7h-3v-7H7v-3h2V9a4 4 0 0 1 4-4h2z"/>
           </svg>
-        </span>
+        </a>
       </div>
 
       <!-- Текст про сайт -->
@@ -669,6 +603,7 @@
   <script src="/js/min/candle_counter.min.js" defer></script>
   <script src="/js/min/bottom_menu.min.js"></script>
   <script src="/js/min/menu.min.js"></script>  
+  <script src="/js/min/service-worker.min.js"></script>  
 
   <script>
     (() => {

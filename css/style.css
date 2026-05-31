@@ -366,7 +366,7 @@ a {
   background:
     linear-gradient(90deg, rgba(5, 6, 8, .94) 0%, rgba(5, 6, 8, .72) 40%, rgba(5, 6, 8, .55) 72%, rgba(5, 6, 8, .86) 100%),
     linear-gradient(180deg, rgba(5, 6, 8, .45), #050608 95%),
-    url("./../../img/hero-portrait.jpg") right -8% top 8% / min(560px, 48vw) auto no-repeat,
+    url("./../../img/hero-portrait.webp") right -8% top 8% / min(560px, 48vw) auto no-repeat,
     radial-gradient(circle at 62% 36%, rgba(214, 168, 95, .14), transparent 38%),
     radial-gradient(circle at 18% 10%, #1b2433, transparent 38%),
     #050608;
@@ -2556,7 +2556,7 @@ a {
   .hero-bg-image {
     background:
       linear-gradient(180deg, rgba(5, 6, 8, .42), rgba(5, 6, 8, .92)),
-      url("./../../img/hero-portrait.jpg") center top / cover no-repeat,
+      url("./../../img/hero-portrait.webp") center top / cover no-repeat,
       #050608;
     opacity: 0.72;
     filter: saturate(0.8) contrast(1.0) brightness(0.85);

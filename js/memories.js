@@ -102,7 +102,9 @@
       `;
     }).join("");
 
-    loadMoreEl.hidden = toShow.length >= filtered.length;
+    loadMoreEl.hidden = filtered.length < 5 || toShow.length >= filtered.length;
+    console.log("filtered:", filtered.length, "toShow:", toShow.length, "hidden:", loadMoreEl.hidden);
+
   }
 
   function updateCounts() {

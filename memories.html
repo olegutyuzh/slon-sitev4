@@ -42,11 +42,11 @@
 
       <a href="index.html" class="header-logo" aria-label="На головну сторінку">
         <div class="header-logo-mark">
-          <img src="img/symbol-slon.jpg" alt="Символ Слон" class="logo-elephant" loading="lazy" />
+          <img src="img/slon-icon-64.png" alt="Символ Слон" class="logo-elephant" loading="lazy" />
         </div>
         <span class="header-logo-text">SLON</span>
         <span class="header-logo-candle" aria-hidden="true">
-          <img src="img/candle.svg" alt="" fetchpriority="high"/>
+          <img src="img/candle.svg" alt="Candle" fetchpriority="high"/>
         </span>
       </a>
 
@@ -156,32 +156,33 @@
 
   <section class="section memory-actions memory-scene reveal-on-scroll">
     <div class="memory-inner">
-      <h2 class="memory-title" data-i18n="memory_title">Вшанувати памʼять</h2>
-      <p class="memory-subtitle" data-i18n="memory_subtitle">
-        Якщо ви знали Ігоря — або просто хочете щось сказати — це місце для цього.
+      <h2 class="memory-title" data-i18n="memory_title_memories">Додайте свій голос</h2>
+      <p class="memory-subtitle" data-i18n="memory_subtitle_memories">
+        Кожен спогад — окремий, і всі вони разом тримають Ігоря живим.
       </p>
 
       <div class="memory-buttons">
-        <button id="lightCandleBtn" class="memory-btn">
-          <span class="memory-btn-icon">
-            <img class="slon-svg" src="/img/candle.svg" alt="">
-          </span>
-          <span data-i18n="light_candle">Запалити свічку</span>
-        </button>
-
         <a class="memory-btn" href="/memory-new.html">
           <span class="memory-btn-icon">
-            <img class="slon-svg" src="/img/message.svg" alt="">
+            <img src="img/message.svg" alt aria-hidden="true" class="slon-svg">
           </span>
           <span data-i18n="leave_message">Залишити слова</span>
         </a>
+
+        <button id="lightCandleBtn" type="button" class="memory-btn">
+          <span class="memory-btn-icon">
+            <img src="img/candle.svg" alt aria-hidden="true" class="slon-svg">
+          </span>
+          <span data-i18n="light_candle">Запалити свічку</span>
+        </button>
       </div>
 
       <div class="candle-counter-line">
+        <span class="candle-counter-line-text" data-i18n="candle_counter_line_memories1">Уже звучить</span>
+        <span id="memoriesCount" class="candle-counter-line-number"></span>
+        <span class="candle-counter-line-text" data-i18n="candle_counter_line_memories2">голосів і горить</span>
         <span id="candlesCount" class="candle-counter-line-number"></span>
-        <span class="candle-counter-line-text" data-i18n="candle_counter_line">
-          свічок памʼяті вже горить
-        </span>
+        <span class="candle-counter-line-text" data-i18n="candle_counter_line_memories3">свічок</span>
       </div>
 
       <!-- ===== Картка свічки — зʼявляється після кліку ===== -->
@@ -190,7 +191,7 @@
         <!-- Стан "щойно запалена" — пропозиція підписати -->
         <div id="candleStateLit" class="candle-card-state">
           <div class="candle-card-icon">
-            <img src="img/candle.svg" alt="" aria-hidden="true" class="slon-svg" />
+            <img src="img/candle.svg" alt="Candle" aria-hidden="true" class="slon-svg" />
           </div>
           <p class="candle-card-text" data-i18n="candle_lit_message">
             Світло памʼяті горить
@@ -221,7 +222,7 @@
         <!-- Стан "вже підписано / повторний візит" -->
         <div id="candleStateDone" class="candle-card-state" hidden>
           <div class="candle-card-icon">
-            <img src="img/candle.svg" alt="" aria-hidden="true" class="slon-svg" />
+            <img src="img/candle.svg" alt="Candle" aria-hidden="true" class="slon-svg" />
           </div>
           <p class="candle-card-text" data-i18n="candle_done_message">
             Ваша свічка горить
@@ -239,7 +240,7 @@
 
       <!-- Символ слона -->
       <div class="footer-symbol" aria-hidden="true">
-        <img src="img/elephant.svg" alt="" class="footer-symbol-img" />
+        <img src="img/elephant.svg" alt="Elephant" class="footer-symbol-img" />
       </div>
 
       <!-- Цитата -->
@@ -262,24 +263,24 @@
             <path d="M3 7l9 6 9-6"/>
           </svg>
         </a>
-        <span class="footer-social-link is-disabled" aria-label="Telegram (недоступно)" aria-disabled="true">
+        <a class="footer-social-link is-disabled" href="#" aria-label="Telegram" aria-disabled="true" tabindex="-1">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 4L3 11l6 2 2 6 4-4 5 4z"/>
             <path d="M9 13l6-4"/>
           </svg>
-        </span>
-        <span class="footer-social-link is-disabled" aria-label="Instagram (недоступно)" aria-disabled="true">
+        </a>
+        <a class="footer-social-link is-disabled" href="#" aria-label="Instagram" aria-disabled="true" tabindex="-1">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="3" y="3" width="18" height="18" rx="5"/>
             <circle cx="12" cy="12" r="4"/>
             <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/>
           </svg>
-        </span>
-        <span class="footer-social-link is-disabled" aria-label="Facebook (недоступно)" aria-disabled="true">
+        </a>
+        <a class="footer-social-link is-disabled" href="#" aria-label="Facebook" aria-disabled="true" tabindex="-1">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M15 8h-2a1 1 0 0 0-1 1v3h3l-.5 3H12v7h-3v-7H7v-3h2V9a4 4 0 0 1 4-4h2z"/>
           </svg>
-        </span>
+        </a>
       </div>
 
       <!-- Текст про сайт -->
@@ -342,6 +343,8 @@
   <script src="/js/min/menu.min.js"></script>  
   <script src="/js/min/reveal.min.js"></script>  
   <script src="/js/min/candle.min.js"></script>
-  <script src="/js/min/candle_counter.min.js"></script>    
+  <script src="/js/min/candle_counter.min.js"></script>  
+  <script src="/js/min/service-worker.min.js"></script> 
+  <script src="/js/min/memories_counter.min.js"></script>   
 </body>
 </html>

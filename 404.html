@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+  <html lang="uk">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Сторінку не знайдено · Ігор «Слон» Утюж</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="stylesheet" href="/css/min/style.min.css" />
+  <link rel="stylesheet" href="/css/min/404.min.css" />  
+  <link rel="stylesheet" href="/css/min/candle.min.css" />     
+  <style>
+    /* 404 overrides: показати фон гір (.bg) з 404.min.css поверх градієнта body */
+    body{background:transparent!important;padding:14vh 1.25rem 2rem!important}
+    .bg{z-index:-2!important}
+    .scrim{z-index:-1!important}
+    /* перемикач мови: той самий шрифт, що й на сайті (body 404 — Georgia, тому inherit давав serif) */
+    .lang-switcher,.lang-switcher button{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="scrim"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-inner">
+
+      <a href="index.html" class="header-logo" aria-label="На головну сторінку">
+        <div class="header-logo-mark">
+          <img src="/img/slon-icon-64.png" alt="Символ Слон" class="logo-elephant" loading="lazy" />
+        </div>
+        <span class="header-logo-text">SLON</span>
+        <span class="header-logo-candle" aria-hidden="true">
+          <img src="/img/candle.svg" alt="Candle" fetchpriority="high"/>
+        </span>
+      </a>
+         
+
+      <div class="lang-switcher" role="group" aria-label="Мова">
+        <button type="button" data-lang="uk" aria-pressed="true">UA</button>
+        <span class="sep" aria-hidden="true">·</span>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="eyebrow">СЛОН · IN MEMORIAM</div>
+    <div class="code">404</div>
+    <h1 class="headline">
+      <span data-i18n="404_title" data-lang="ua" class="show">Цієї сторінки знайти не вдалося</span>
+    </h1>
+    <p class="lead">
+      <span data-i18n="404_description" data-lang="ua" class="show">«Слон» — той, хто йде вперед, коли інші зупиняються. Повернімося на правильний шлях.</span>
+    </p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://slon.life/">
+        <span data-i18n="404_button_home" data-lang="ua" class="show">На головну</span>
+      </a>
+      <a class="btn btn-ghost" href="https://slon.life/biography#bio-war-path">
+        <span data-i18n="404_button_warrior_path" data-lang="ua" class="show">Шлях воїна</span>
+      </a>
+    </div>
+  </main>
+
+<!-- <script>
+  function setLang(lang){
+    document.documentElement.lang = lang === 'ua' ? 'uk' : 'en';
+    document.querySelectorAll('[data-lang]').forEach(function(el){
+      el.classList.toggle('show', el.getAttribute('data-lang') === lang);
+    });
+    document.getElementById('btn-ua').classList.toggle('active', lang === 'ua');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  }
+</script> -->
+  <script src="/js/min/lang.min.js"></script>
+</body>
+</html>
