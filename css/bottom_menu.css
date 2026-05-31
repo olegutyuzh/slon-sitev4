@@ -142,9 +142,14 @@
 
 /* Дуже вузькі екрани — компактніший вигляд */
 
-@media (max-width: 360px) {
+@media (max-width: 400px) {
   .bottom-nav-label {
-    font-size: 9.5px;
+    font-size: 9px;
+    letter-spacing:0;
+  }
+
+  .bottom-nav-item{
+    padding:6px 2px
   }
 
   .bottom-nav-icon {
