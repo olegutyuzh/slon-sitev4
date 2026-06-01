@@ -1,7 +1,7 @@
 {
   "uk": {
     "mmap_eyebrow": "Географія",
-    "mmap_h1": "Шлях Ігоря на карті пам'яті",
+    "mmap_h1": "Шлях пам’яті",
     "mmap_lede": "Від барикад Маріїнського парку — до останнього бою на Запорізькому напрямку. Кожна точка — місце, де Слон зробив свій вибір.",
     "mmap_legend_point": "Точка пам'яті",
     "mmap_legend_route": "Шлях у часі — 1996 → 2023",
@@ -72,7 +72,7 @@
   },
   "en": {
     "mmap_eyebrow": "Geography",
-    "mmap_h1": "Ihor's path on the map of memory",
+    "mmap_h1": "Memory Journey",
     "mmap_lede": "From the barricades of Mariinskyi Park to the final battle on the Zaporizhzhia front. Each point is a place where Slon made his choice.",
     "mmap_legend_point": "Point of memory",
     "mmap_legend_route": "Path through time — 1996 → 2023",
