@@ -14,6 +14,7 @@
   
   <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
   <link rel="stylesheet" href="/css/min/index.bundle.min.css" />   
+  <link rel="stylesheet" href="/css/min/journey-teaser.min.css" />    
   <link rel="icon" href="/favicon.ico">
 
   <link rel="stylesheet"
@@ -209,7 +210,7 @@
           <div class="timeline-item">
             <div class="timeline-year" data-i18n="timeline_year_last_battle">2022 — 2023</div>
             <div class="timeline-title" data-i18n="timeline_title_last_battle">Київщина, Харківщина, Південь</div>
-            <div class="timeline-text" data-i18n="timeline_text_last_battle">Брав участь у звільненні Київщини та Харківщини. Згодом — Запорізький та Херсонський напрямки. Працював на складних ділянках, підтримував побратимів, ніколи не залишав своїх. У грудні 2023 року, виконуючи бойове завдання, його позицію атакував ворожий ФПВ-дрон. Ігор загинув, прикривши собою побратимів — так само, як жив: стоячи поруч, до кінця, без страху і без кроку назад.</div>
+            <div class="timeline-text" data-i18n="timeline_text_last_battle">Брав участь у звільненні Київщини та Харківщини. Згодом — Запорізький та Херсонський напрямки. Працював на складних ділянках, підтримував побратимів, ніколи не залишав своїх. У грудні 2023 року, виконуючи бойове завдання, його позицію атакував ворожий FPV-дрон. Ігор загинув, прикривши собою побратимів — так само, як жив: стоячи поруч, до кінця, без страху і без кроку назад.</div>
           </div>
 
           <a href="biography.html#bio-war-path" class="link-more" data-i18n="read_more_war">Більше про шлях</a>
@@ -232,6 +233,30 @@
 
     </div>
   </section>
+
+    <!-- ===== JOURNNEY TEASER ===== -->
+  <section class="journey-teaser" aria-labelledby="journey-teaser-title">
+    <div class="journey-teaser-card">
+      <div class="journey-teaser-body">
+        <p class="journey-teaser-kicker" data-i18n="mmap_eyebrow">Географія</p>
+        <h2 class="journey-teaser-title" id="journey-teaser-title" data-i18n="jt_title">Шлях Ігоря на карті пам'яті</h2>
+        <p class="journey-teaser-text" data-i18n="jt_text">Від барикад Маріїнського парку до останнього бою на Запорізькому напрямку. Сім місць, кожне з яких стало частиною його вибору.</p>
+        <a class="journey-teaser-cta" href="/journey.html" data-i18n="jt_cta">Пройти шлях на карті</a>
+      </div>
+      <div class="journey-teaser-visual" aria-hidden="true">
+        <svg viewBox="0 0 360 220" xmlns="http://www.w3.org/2000/svg">
+          <path class="jt-route" d="M 60,70 L 90,95 L 300,150 L 70,40 L 250,90 L 150,200 L 210,165"/>
+          <circle class="jt-dot" cx="60"  cy="70"  r="5"/>
+          <circle class="jt-dot" cx="90"  cy="95"  r="5"/>
+          <circle class="jt-dot" cx="300" cy="150" r="5"/>
+          <circle class="jt-dot" cx="70"  cy="40"  r="5"/>
+          <circle class="jt-dot" cx="250" cy="90"  r="5"/>
+          <circle class="jt-dot" cx="150" cy="200" r="5"/>
+          <circle class="jt-dot is-last" cx="210" cy="165" r="6"/>
+        </svg>
+      </div>
+    </div>
+  </section>  
 
   <!-- ===== LIFE FRAGMENTS ===== -->
   <section id="life" class="section life-fragments">
@@ -410,13 +435,17 @@
             <img src="img/message.svg" alt="Message" aria-hidden="true" class="slon-svg" />
           </span>
           <span data-i18n="leave_message">Залишити слова</span>
-        </a>
-      
+        </a>              
       </div>
+
+      <p class="gratitude-aside">
+        <span data-i18n="gratitude_or">або</span>
+        <a href="/contact.html" data-i18n="gratitude_contact_link">написати родині особисто</a>
+      </p>
       
       <!-- ===== Маленький лічильник прямо під кнопками ===== -->
       <div class="candle-counter-line">
-        <span class="candle-counter-line-number" id="candlesCount">—</span>
+        <span class="candle-counter-line-number" id="candlesCount">0</span>
         <span class="candle-counter-line-text" data-i18n="candle_counter_line_home">
           свічок памʼяті вже горить
         </span>
@@ -533,14 +562,10 @@
       <div class="footer-meta">
         <div data-i18n="footer_left_text_1">Сайт-пам'ять про Ігоря «Слона» Утюжа.</div>
         <div data-i18n="footer_left_text_2">Створено родиною та друзями. 2024 — <span id="year"></span>2026</div>
+        <div class="footer-contact-link">
+          <a href="/contact.html" data-i18n="footer_contact_link">Контакти для уточнень →</a>
+        </div>
       </div>
-
-      <!-- Перемикач мови -->
-<!--       <div class="footer-lang" role="group" aria-label="Мова">
-        <button type="button" data-lang="uk" class="footer-lang-btn is-active" aria-pressed="true">UA</button>
-        <span class="footer-lang-sep" aria-hidden="true">/</span>
-        <button type="button" data-lang="en" class="footer-lang-btn" aria-pressed="false">EN</button>
-      </div> -->
 
     </div>
   </footer>
@@ -585,6 +610,14 @@
       </svg>
       <span class="bottom-nav-label" data-i18n="menu_biography">Життєпис</span>
     </a>
+
+    <a class='bottom-nav-item' href='recognition.html'>
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="9" r="5"/>
+        <path d="M8.5 13l-1.5 8 5-3 5 3-1.5-8"/>
+      </svg>
+      <span class="bottom-nav-label" data-i18n="menu_recognition">Вшанування</span>
+    </a>    
   </nav>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js" defer></script>

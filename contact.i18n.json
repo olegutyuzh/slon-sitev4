@@ -1,0 +1,40 @@
+{
+  "uk": {
+    "footer_contact_link": "Контакти для уточнень →",
+    "gratitude_or": "або",
+    "gratitude_contact_link": "написати родині особисто",
+    "contact_page_title": "Контакти — Ігор «Слон» Утюж",
+    "contact_hero_kicker": "Контакти",
+    "contact_hero_title": "Доповнити цю пам'ять",
+    "contact_hero_subtitle": "Якщо ви знали Ігоря, маєте спогад чи фото, помітили неточність у фактах або хочете щось уточнити — родина буде вдячна. Ця сторінка живе, доки ми її доповнюємо.",
+    "contact_card1_title": "Написати родині",
+    "contact_card1_meta": "Для уточнень, спогадів, фото, історій. Відповідаємо особисто.",
+    "contact_card1_action": "anin2k@ukr.net",
+    "contact_card2_title": "Залишити слова",
+    "contact_card2_meta": "Публічний спогад у розділі памʼяті — буде поряд із голосами інших.",
+    "contact_card2_action": "До форми спогадів",
+    "contact_card3_title": "Виправлення",
+    "contact_card3_meta": "Помітили помилку у датах, фактах чи іменах — напишіть з темою «правка».",
+    "contact_card3_action": "Надіслати правку",
+    "contact_footnote": "«Світло їхнього життя — у нашій пам’яті»"
+  },
+  "en": {
+    "footer_contact_link": "Contacts for clarifications →",
+    "gratitude_or": "or",
+    "gratitude_contact_link": "write to the family privately",
+    "contact_page_title": "Contact — Ihor «Slon» Utiuzh",
+    "contact_hero_kicker": "Contact",
+    "contact_hero_title": "Contribute to this memory",
+    "contact_hero_subtitle": "If you knew Ihor, have a memory or a photo, noticed an inaccuracy in the facts, or want to clarify something — the family will be grateful. This page lives as long as we continue to add to it.",
+    "contact_card1_title": "Write to the family",
+    "contact_card1_meta": "For clarifications, memories, photos, stories. We reply personally.",
+    "contact_card1_action": "anin2k@ukr.net",
+    "contact_card2_title": "Leave your words",
+    "contact_card2_meta": "A public memory in the remembrance section — it will appear alongside the voices of others.",
+    "contact_card2_action": "To the memory form",
+    "contact_card3_title": "Corrections",
+    "contact_card3_meta": "If you noticed an error in dates, facts, or names — write with the subject “correction”.",
+    "contact_card3_action": "Send a correction",
+    "contact_footnote": "“The light of their life lives on in our memory”"
+  }
+}

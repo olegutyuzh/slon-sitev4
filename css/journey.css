@@ -1,0 +1,161 @@
+/* ===== Journey of Life additions ===== */
+.mmap-story-intro {
+  max-width: 820px;
+  margin: 18px auto 34px;
+  padding: 22px 24px;
+  border: 1px solid rgba(215, 201, 166, .18);
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(215,201,166,.07), rgba(255,255,255,.025));
+  box-shadow: 0 24px 80px rgba(0,0,0,.22);
+  text-align: center;
+}
+.mmap-story-intro-title {
+  margin: 0 0 10px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 500;
+  color: #f4efe3;
+}
+.mmap-story-intro-text {
+  margin: 0 auto;
+  max-width: 640px;
+  color: rgba(244,239,227,.76);
+  line-height: 1.75;
+}
+.mmap-journey-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0 0 18px;
+  padding: 14px 16px;
+  border: 1px solid rgba(215, 201, 166, .16);
+  border-radius: 22px;
+  background: rgba(5, 8, 20, .58);
+  backdrop-filter: blur(14px);
+}
+.mmap-journey-controls { display: flex; gap: 10px; flex-wrap: wrap; }
+.mmap-journey-btn {
+  cursor: pointer;
+  border: 1px solid rgba(215, 201, 166, .32);
+  border-radius: 999px;
+  padding: 10px 16px;
+  color: #f4efe3;
+  background: rgba(215, 201, 166, .09);
+  font: inherit;
+  transition: transform .22s ease, background .22s ease, border-color .22s ease;
+}
+.mmap-journey-btn:hover { transform: translateY(-1px); background: rgba(215, 201, 166, .16); border-color: rgba(215, 201, 166, .55); }
+.mmap-journey-btn.is-primary { background: #d7c9a6; color: #050814; border-color: #d7c9a6; }
+.mmap-journey-status {
+  min-width: 220px;
+  color: rgba(244,239,227,.72);
+  font-size: 14px;
+  letter-spacing: .02em;
+}
+.mmap-mapcard { position: relative; overflow: hidden; }
+.mmap-mapcard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(215,201,166,.08), transparent 34%),
+    linear-gradient(180deg, transparent 55%, rgba(5,8,20,.18));
+}
+.mmap-svg { transition: filter .8s ease; transform-origin: center; }
+.mmap-mapcard.is-flying .mmap-svg { filter: drop-shadow(0 0 28px rgba(215,201,166,.12)); }
+.mmap-route {
+  stroke-dasharray: var(--route-length, 1800);
+  stroke-dashoffset: var(--route-length, 1800);
+  transition: stroke-dashoffset 1.4s ease;
+}
+.mmap-mapcard.is-journey-started .mmap-route { stroke-dashoffset: var(--route-offset, 0); }
+.mmap-route { fill: none; stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+/* Окремі сегменти маршруту між точками (генеруються в JS). */
+.mmap-seg {
+  fill: none;
+  stroke: var(--mmap-route, rgba(244,198,107,.55));
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 8px var(--mmap-glow, rgba(244,198,107,.4)));
+  transition: opacity .6s ease, stroke .4s ease;
+}
+/* Сегмент, що веде до активної точки — суцільний і яскравіший. */
+.mmap-seg.is-solid { stroke-dasharray: none; opacity: 1; stroke: var(--mmap-flame, #f4c66b); }
+/* Решта пройдених сегментів — пунктир. */
+.mmap-seg.is-dashed { stroke-dasharray: 5 7; opacity: .85; }
+/* Ще не пройдені сегменти — приглушені. */
+.mmap-seg.is-future { stroke-dasharray: 2 6; opacity: .22; }
+/* Режим «вся карта»: весь маршрут — пунктиром, як неактивні пройдені ділянки. */
+.mmap-mapcard.is-overview .mmap-seg { opacity: .85; stroke: var(--mmap-route, rgba(244,198,107,.55)); stroke-dasharray: 5 7; }
+/* Точки малюються поверх лінії, тож лінія від центру до центру акуратно
+   ховається під ядром активної точки, а в порожні точки просто доходить до центру. */
+.mmap-point { opacity: .48; transition: opacity .35s ease; }
+/* Неактивне коло: центр зафарбований кольором суходолу, щоб лінія
+   не просвічувала всередині — візуально центр порожній (тільки контур). */
+.mmap-point .mmap-point-core { fill: var(--mmap-card-fill, #0a1326); }
+/* Активне коло — залите кольором полум'я. */
+.mmap-point.is-active .mmap-point-core { fill: var(--mmap-flame, #f4c66b); }
+.mmap-point.is-visited { opacity: .8; }
+.mmap-point.is-active { opacity: 1; }
+/* Масштабуємо ТІЛЬКИ кола, кожне навколо власного центру (а не всю групу,
+   куди входить зміщений вбік текст) — інакше коло від'їжджає від лінії. */
+.mmap-point circle { transition: transform .45s ease; transform-box: fill-box; transform-origin: center; }
+.mmap-point.is-active circle { transform: scale(1.08); }
+.mmap-point.is-active .mmap-point-glow { animation: mmapPulse 2.2s ease-in-out infinite; }
+@keyframes mmapPulse { 0%,100%{opacity:.45} 50%{opacity:.95} }
+.mmap-panel {
+  position: relative;
+  overflow: hidden;
+}
+.mmap-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(215,201,166,.11), transparent 42%);
+  pointer-events: none;
+}
+.mmap-panel.is-capsule-enter { animation: capsuleEnter .55s ease both; }
+@keyframes capsuleEnter { from { opacity:.4; transform: translateY(10px); } to { opacity:1; transform:none; } }
+.mmap-capsule-kicker {
+  display: inline-flex;
+  margin-bottom: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(215,201,166,.11);
+  color: #d7c9a6;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.mmap-final {
+  margin: 34px auto 0;
+  max-width: 840px;
+  padding: 30px 24px;
+  text-align: center;
+  border-top: 1px solid rgba(215,201,166,.18);
+  color: rgba(244,239,227,.78);
+}
+.mmap-final-title {
+  margin: 0 0 10px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(28px, 4vw, 44px);
+  color: #f4efe3;
+  font-weight: 500;
+}
+.mmap-final-text { max-width: 620px; margin: 0 auto; line-height: 1.8; }
+@media (max-width: 900px) {
+  .mmap-mapcard { cursor: pointer; }
+}
+@media (max-width: 760px) {
+  .mmap-journey-bar { justify-content: center; text-align: center; }
+  .mmap-journey-status { min-width: 100%; }
+  .mmap-story-intro { border-radius: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mmap-svg, .mmap-route, .mmap-point, .mmap-panel, .mmap-journey-btn { transition: none !important; animation: none !important; }
+}
