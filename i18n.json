@@ -324,7 +324,17 @@
     "404_title": "Цієї сторінки знайти не вдалося",
     "404_description": "«Слон» — той, хто йде вперед, коли інші зупиняються. Повернімося на правильний шлях.",
     "404_button_home": "На головну",
-    "404_button_warrior_path": "Шлях воїна"
+    "404_button_warrior_path": "Шлях воїна",
+
+    "jt_title": "Шлях Ігоря на карті пам'яті",
+    "jt_text": "Від барикад Маріїнського парку до останнього бою на Запорізькому напрямку. Сім місць, кожне з яких стало частиною його вибору.",
+    "jt_cta": "Пройти шлях на карті",
+    "nav_memories": "Спогади",
+    "nav_stories": "Історії",
+    "nav_biography": "Життєпис",
+    "nav_journey": "Шлях пам'яті",
+    "mmap_show_all": "Вся карта",
+    "mmap_back_to_site": "← Повернутись на головну"
   },
   "en": {
     "hero_kicker": "Soldier, friend, son",
@@ -652,6 +662,16 @@
     "404_title": "This page could not be found",
     "404_description": "“Slon” is the one who moves forward when others stop. Let us return to the right path.",
     "404_button_home": "Home",
-    "404_button_warrior_path": "The warrior’s path"    
+    "404_button_warrior_path": "The warrior’s path",
+    
+    "jt_title": "Ihor's path on the memory map",
+    "jt_text": "From the barricades of Mariinskyi Park to the final battle on the Zaporizhzhia front. Seven places, each one part of his choice.",
+    "jt_cta": "Walk the path on the map",
+    "nav_memories": "Memories",
+    "nav_stories": "Stories",
+    "nav_biography": "Biography",
+    "nav_journey": "Memory Journey",
+    "mmap_show_all": "Whole map",
+    "mmap_back_to_site": "← Back to home"    
   }
 }

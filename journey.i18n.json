@@ -80,7 +80,8 @@
     "mmap_journey_status_playing": "Шлях пам’яті: точка {current} з {total}",
     "mmap_capsule_kicker": "Капсула спогаду",
     "mmap_final_title": "Місця залишаються. Пам’ять триває.",
-    "mmap_final_text": "Цей шлях не завершується на карті. Він продовжується в людях, які пам’ятають, розповідають і несуть його історію далі."
+    "mmap_final_text": "Цей шлях не завершується на карті. Він продовжується в людях, які пам’ятають, розповідають і несуть його історію далі.",
+    "mmap_show_all": "Вся карта"
   },
   "en": {
     "mmap_eyebrow": "Geography",
@@ -163,6 +164,7 @@
     "mmap_journey_status_playing": "Memory Journey: point {current} of {total}",
     "mmap_capsule_kicker": "Memory capsule",
     "mmap_final_title": "Places remain. Memory continues.",
-    "mmap_final_text": "This journey does not end on the map. It continues through the people who remember, tell the story, and carry it forward."
+    "mmap_final_text": "This journey does not end on the map. It continues through the people who remember, tell the story, and carry it forward.",
+    "mmap_show_all": "Whole map"
   }
 }
