@@ -822,13 +822,16 @@
 }
 
 /* Вертикальне відео — 9:16 (як TikTok / Instagram Reels) */
-.story-figure--video.story-figure--portrait .story-figure-video-wrap {
-  aspect-ratio: 9 / 16;
+.story-figure--video.story-figure--portrait {
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
 }
 
+.story-figure--video.story-figure--portrait .story-figure-video-wrap {
+  aspect-ratio: 9 / 16;
+  /* max-width / margin звідси прибрані — тепер центрується вся фігура */
+}
 /* ===== ОФОРМЛЕННЯ ТЕКСТУ ІСТОРІЇ =====
    Використовується всередині .bio-content на сторінках окремих історій.
    Класи .aside та .handwritten зустрічаються в HTML-розмітці постів. */
@@ -1066,4 +1069,73 @@
   position: relative;
   z-index: 2;
   padding-bottom: 100px; 
+}
+
+.story-photo-pair {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.story-photo-pair .story-figure {
+  flex: 1;
+  min-width: 0; /* щоб фото не розпирали контейнер */
+}
+
+@media (max-width: 600px) {
+  .story-photo-pair {
+    flex-direction: column;
+  }
+}
+
+.story-photo-row {
+  display: flex;
+  gap: 0;              /* впритул; постав 4px, якщо хочеш тонку лінію між кадрами */
+}
+
+.story-photo-row img {
+  width: 50%;
+  height: 320px;       /* спільна висота рядка — підбери під свій макет */
+  object-fit: cover;   /* обрізає по краях, щоб обидва кадри були рівні */
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .story-photo-row img {
+    height: 220px;     /* нижча смуга на мобільному; фото лишаються поруч */
+  }
+}
+
+.story-figure-source {
+  margin-top: 6px;
+  font-size: 0.85em;
+  font-style: italic;
+  opacity: 0.7;
+  text-align: center;       /* як підпис; прибери, якщо треба ліворуч */
+}
+
+.story-figure-source a {
+  color: inherit;
+  text-decoration: underline;
+  word-break: break-word;   /* підстраховка, щоб довге не ламало верстку */
+}
+
+/* ЯКЩО знайдеш правило з attr(href) — прибери його або перекрий: */
+.story-figure-source a::after { content: none !important; }
+
+.story-duo-imgs {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.story-duo-imgs .story-figure-img {
+  flex: 1;
+  min-width: 0;   /* щоб фото не розпирали контейнер */
+}
+
+@media (max-width: 600px) {
+  .story-duo-imgs {
+    flex-direction: column;
+  }
 }
